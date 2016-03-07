@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"> 
+<title>税务报表查询软件</title>
+<link href="css/css.css" type="text/css" rel="stylesheet" />
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery.js" runat="server"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$(".btn1").click(function(){
+  $(this).next().slideToggle();
+});
+ });
+</script>
+<script type="text/javascript">
+  function ch(id)
+  { 
+   var t=document.getElementById(id);
+   if(t.checked==true)
+   {
+	   t.checked=false;}
+	   else{
+		   t.checked=true;}
+	  }
+</script>
+</head>
+
+<body>
+<div class="main">
+<img src="images/banner.jpg" class="banner" alt="诚信纳税，贷款无忧" />
+<ul class="history_list">
+<li><a href="#" class="btn1"><p class="xx_left"><span>杭州耐克网络科技有限公司</span>最近更新：2015-03-12</p><p class="zt_right"><img src="images/right_tb.png" /><span>更新成功</span></p><p class="clear"></p></a>
+<ul class="zk_fnav">
+<li><a href="result.html"><img src="images/scan_icon.png" /><span>预览更新</span></a></li>
+<li><a href="javascript:tjxx()"><img src="images/down_icon.png" /><span>下载到手机</span></a></li>
+<li><a href="javascript:tjxx1()"><img src="images/exmail_icon.png" /><span>发送到邮箱</span></a></li>
+</ul>
+</li>
+<li><a href="#"><p class="xx_left"><span>杭州摩科商用设备有限公司</span>最近更新：2015-03-12</p><p class="zt_right"><img src="images/right_tb.png" /><span class="load">更新中</span></p><p class="clear"></p></a></li>
+<li><a href="exit_login1.html"><p class="xx_left"><span>杭州默克网络科技有限公司</span>最近更新：2015-03-12</p><p class="zt_right"><img src="images/right_tb.png" /><span class="fail">更新失败</span></p><p class="clear"></p></a></li>
+</ul> 
+<ul class="foot">
+<li><a href="guoshui_login.html">新增查询</a></li>
+<li><a href="history.html" class="hit">查询记录</a></li>
+<li class="last"><a href="#">联系我们</a></li>
+</ul>
+
+</div> 
+
+<div class="down" id="down">
+<p class="bt">下载税务信息</p>
+<p class="tswz">请选择所需下载的税务信息（可多选）：</p>
+<form>
+<ul id="infos_check">
+<li onclick="ch('in1')"><input type="checkbox" id="in1" />近3个月税务信息</li>
+<li onclick="ch('in2')"><input type="checkbox" id="in2" />2015年税务信息</li>
+<li onclick="ch('in3')"><input type="checkbox" id="in3" />2014年税务信息</li>
+</ul>
+</form>
+<p class="cz_btn_x"><a href="javascript:close()" class="cancel_btn">取消</a><a href="javascript:close()" class="tj_btn">确认发送</a></p>
+</div>  
+
+<div class="exmail" id="exmail">
+<p class="bt">发送税务信息到邮箱</p>
+<p class="tswz">请选择所需发送到邮箱的税务信息（可多选）：</p>
+<form>
+<ul id="infos_check">
+<li onclick="ch('ex1')"><input type="checkbox" id="ex1" />近3个月税务信息</li>
+<li onclick="ch('ex2')"><input type="checkbox" id="ex2" />2015年税务信息</li>
+<li onclick="ch('ex3')"><input type="checkbox" id="ex3" />2014年税务信息</li>
+<li><input type="text" class="ex_txt" placeholder="请输入您的邮箱"/></li>
+</ul>
+</form>
+<p class="cz_btn_x"><a href="javascript:close1()" class="cancel_btn">取消</a><a href="javascript:close1()" class="tj_btn">确认发送</a></p>
+<span class="yjtx">税务信息将于2小时内发送到您的邮箱，请注意查收！</span> 
+</div>  
+<div id="over"></div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var oDown=document.getElementById("down")
+	var oExmail=document.getElementById("exmail")
+	var over=document.getElementById("over")
+function tjxx(){
+	oDown.style.display = "block";
+    over.style.display = "block";	
+	}
+function close(){
+	oDown.style.display = "none";
+    over.style.display = "none";	
+	}
+function tjxx1(){
+	oExmail.style.display = "block";
+    over.style.display = "block";	
+	}
+function close1(){
+	oExmail.style.display = "none";
+    over.style.display = "none";	
+	}
+</script>
